@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+</head>
+
+
+<body style="background-color: white;">
+    <!-- Header Section -->
+    <header >
+<img src="Kigrou2.png" alt="logo" width="80" style="float:left; margin-right:10px;">
+
+        <h1 style="color:black;" style="font-family:Linux Libertine;"> BRETONPEDIA </h1>
+
+        <!-- Navigation Links -->
+
+        <h3><nav > 
+           <a href="index.html">Home</a> |
+            <a href="trip.html">Voyages</a> |
+            <a href="kdo.html">Cadeaux</a> |
+<a href="voc.html">Vocabulaire spécifique</a>
+        </h3></nav>
+    </header>
+
+    <hr>
+
+    <!-- Main Content -->
+    <main>
+<div id="layout">
+
+    <div id="calendar">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FParis&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&src=ZmFtaWx5MTIwMDQ5NzczMzY1NjQyMDA2NDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23ef6c00" style="border-width:0" width="600" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+    <div id="quoteBox">
+	<h1 id="hh">Citation du jour </h1>
+        <p id="quote"></p>
+	<p id="author"></p>
+    </div>
+
+</div>
+
+
+
+<style>
+#hh{  
+    text-align: center;
+
+}
+#layout{
+    display: flex;
+    align-items: flex-start;
+}
+
+#calendar{
+    width:50%;
+    border: 2px solid black;
+    padding: 20px;
+border-radius: 25px;
+background-color: #a2b3de;
+}
+
+#quoteBox{
+    width: 50%;
+    border: 2px solid black;
+    padding: 20px;
+    margin-left: 20px;
+background-color: #f3c1f5;
+border-radius: 25px;
+}
+
+/* Quote text */
+#quote{
+    font-size: 26px;
+}
+#author{
+    font-size: 26px;
+	text-align: right;
+font-weight: bold;
+}
+</style>
+
+
+
+<script>
+
+let verbs = ["lave","inaugure","transforme","s'agenouille devant","est ébahi par","renifle","tape","rumine","ficelle","recrache","s'hydrate face à","vaut mieux qu'"];
+let nouns = ["l'aspirateur","un post-it","un mouchoir de poche","un pengolin","une branche de peuplier","un agent des forces de l'ordre","un jus de pamplemousse","une guitare sèche","un charriot élévateur","une compétiton de breakdance","un repas de famille","un autographe de Daniel Ballavoine","un pot de yaourt"];
+let adjectives = ["sauvage","médiocre", "à double tranchant","perdu dans l'espace temps","sous téstostérone","alllérgique","pyromane","devenu milliardaire","à la dérive", "sous l'emprise de drogues dures","qui pilote des chariots de manutention","en quête d'amour"];
+let subjects = ["Marty Mcfly","Dumbledore","Votre inconscient","L'amour de votre père", "Le teletubbies jaune","La place de la femme dans la société","Votre destin","La confiance en soi","Votre cuir chevelu"," Votre avocat","La pluie d'orage après une longue journée d'été","Un pull en cachemire"];
+let prenoms = ['Quasimodo', 'Raoul', 'Fabrice', 'Jeff', 'Sylvain', 'Régis', 'Philippe', 'André', 'Didier', 'Raymond', 'Patrick', 'Pascal', 'Michel', 'Jérémie', 'Timothée', 'Théotime', 'Ferdinand', 'Mouloud', 'Jacques', 'Jacquot', 'Alain', 'Albert', 'Alderic', 'Christian', 'Anatole', 'George', 'Guy', 'Alfred', 'Frédéric', 'Hubert', 'Philibert', 'Roberto', 'Dominique', 'Dominique', 'Sylvie', 'Agathe', 'Jennifer', 'Antoinette', 'Deborah', 'Patricia', 'Gertrude', 'Gwendoline', 'Georgette', 'Sophie'];
+let noms=["Wang", "Li", "Zhang", "Chen", "Liu", "Devi", "Yang", "Huang", "Singh", "Wu", "Kumar", "Xu", "Ali", "Zhao", "Zhou", "Nguyen", "Khan", "Ma", "Lu", "Zhu", "Maung", "Sun", "Yu", "Lin", "Kim", "He", "Hu", "Jiang", "Guo", "Ahmed", "Khatun", "Luo", "Akter", "Gao", "Zheng", "da Silva", "Tang", "Liang", "Das", "Wei", "Mohamed", "Islam", "Shi", "Song", "Xie", "Han", "Garcia", "Mohammad", "Tan", "Deng", "Bai", "Ahmad", "Yan", "Kaur", "Feng", "Hernandez", "Rodriguez", "Cao", "Lopez", "Hassan", "Hussain", "Gonzalez", "Martinez", "Ceng", "Ibrahim", "Peng", "Cai", "Xiao", "Tran", "Pan", "dos Santos", "Cheng", "Yuan", "Rahman", "Yadav", "Su", "Perez", "I", "Le", "Fan", "Dong", "Ye", "Ram", "Tian", "Fu", "Hossain", "Kumari", "Sanchez", "Du", "Pereira", "Yao", "Zhong", "Jin", "Pak", "Ding", "Mohammed", "Lal", "Yin", "Bibi", "Silva", "Muhammad", "Ren", "Ferreira", "Liao", "Mandal", "Cui", "Begum", "Fang", "Sharma", "Alves", "Shah", "Ray", "Qiu", "Meng", "Ramirez", "Mondal", "Dai", "Kang", "Patel", "Wen", "Gu", "Gomez", "Pham", "Jia", "Sah", "Xia", "Hong", "Abdul", "Rodrigues", "Smith", "Santos", "Diaz", "Hou", "Hasan", "Xiong", "Zou", "Alam", "Prasad", "de Oliveira", "Qin", "Choe", "Ji", "Uddin", "Musa", "Gong", "Ghosh", "Chang", "Flores", "Diallo", "Gomes", "Xue", "Lei", "Patil", "Torres", "de Souza", "Qi", "Lai", "Cruz", "Long", "Ramos", "Hussein", "Fernandez", "Duan", "Ri", "An", "Shaikh", "Bakhash", "Xiang", "Pal", "Morales", "Allah", "Wan", "Johnson", "Reyes", "Abdullahi", "Tao", "Gupta", "Jimenez", "Mao", "Biswas", "Kong", "Hoang", "Williams", "Abubakar", "Abbas", "Sahu", "Gutierrez", "Chong", "Hao", "Shao", "Saha", "Guan", "Mo", "Ruiz", "Khatoon", "Oliveira", "Qian", "Roy", "Saleh", "Abdullah", "Lan", "Sarkar", "Sani", "Castillo", "Alvarez", "Brown", "Martin", "Jones", "Mendoza", "Romero", "Iqbal", "Qu", "Begam", "Rana", "Castro", "Ansari", "Yi", "Usman", "Traore", "Bao", "Sekh", "Rojas", "Bi", "Mahmoud", "Martins", "Ortiz", "Vu", "Moreno", "de Jesus", "Malik", "Ribeiro", "Lee", "Mahato", "Ullah", "Ismail", "Fernandes", "Rani", "Paramar", "Thomas", "John", "Ge", "Phan", "Rivera", "Chu", "Adamu", "Mahto", "Tong", "Vargas", "Niu", "Xing", "Joseph", "Lopes", "Cho", "Osman", "Nayak", "Umar", "Pang", "Rathod", "Jadhav", "Bui", "Chand", "Zhan", "Mia", "Coulibaly", "Barman", "Soares", "Sato", "You", "Ni", "Khaled", "Chan", "Di", "Saeed", "Mishra", "Herrera", "Thakur", "Barbosa", "Zhuang", "Behera", "Adam", "Lima", "Sultana", "Suzuki", "Medina", "Din", "Ho", "Bano", "Costa", "Aguilar", "O", "Dias", "Dang", "Paswan", "Muñoz", "Qiao", "Muhammed", "Yusuf", "Abdi", "Miller"];
+let adv=["Cependant, ","Mais, ","Pendant ce temps, ","Pourtant, ","Il faut se rappeler que ","Dans une dimension parallèle, ","Au contraire, ","Similairement, "];
+
+function randomWord(list){
+    return list[Math.floor(Math.random() * list.length)];
+}
+
+
+
+   let quote = "« " + randomWord(subjects) +  " " +
+     randomWord(verbs) + 
+    " " + randomWord(nouns) + " " + randomWord(adjectives) + "." + randomWord(adv) + randomWord(subjects) + " " + randomWord(verbs)+ " " + randomWord(nouns)+ " " + "»";
+
+    document.getElementById("quote").innerText = quote;
+let author = randomWord(prenoms) + " " + randomWord(noms) + "";
+document.getElementById("author").innerText = author;
+
+
+</script>
+
+
+    </main>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>Nous ne répondrons a aucune plainte.</p>
+    </footer>
+
+</body>
+</html>
